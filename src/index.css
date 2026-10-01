@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-hand: 'Caveat', cursive;
+  }
+
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .font-hand {
+    font-family: var(--font-hand);
+  }
+
+  .font-serif-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CEBE;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3D352D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E86034;
+}
+
+/* Subtle steam animation */
+@keyframes steamFloat {
+  0% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.4;
+    transform: translateY(-24px) scaleX(1.3) scaleY(1.2) translateX(4px);
+  }
+  100% {
+    transform: translateY(-44px) scaleX(1.6) scaleY(1.4) translateX(-3px);
+    opacity: 0;
+  }
+}
+
+.animate-steam-1 {
+  animation: steamFloat 3.8s ease-in-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steamFloat 4.2s ease-in-out infinite 1.2s;
+}
+
+.animate-steam-3 {
+  animation: steamFloat 3.5s ease-in-out infinite 2.1s;
+}
+
+/* Float subtle elements */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-float-subtle {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: subtleFloat 7s ease-in-out infinite reverse;
+}
+
+/* Hide scrollbar for clean horizontal swipe containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Guppa Bistro - Bandra West Mumbai",
+  "description": "Neighbourhood café and bistro in Bandra West, Mumbai serving Bombay-inspired food with Parsi, Goan and contemporary influences, artisanal coffee, and old favourites.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
